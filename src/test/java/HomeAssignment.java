@@ -6,8 +6,8 @@ public class HomeAssignment {
     ApiResponses apiResponses = new ApiResponses();
     Variables variables = new Variables();
 
-    @Test
-    public void createNewUser() {
+    @Test(description = "Register new user with userName, password and externalId that randomly generate each run")
+    public void registerNewUser() {
         Utilities.generateNewUserDetails(variables);
         apiResponses.createNewUserRequest(variables.getUserName(), variables.getPassword(), variables.getExternalId());
 
@@ -21,7 +21,7 @@ public class HomeAssignment {
         Assert.assertEquals(apiResponses.countryIdKeyExistenceAndType(), "Integer");
     }
 
-    @Test(dependsOnMethods = {"createNewUser"})
+    @Test(description = "Login with the new user that we just registered", dependsOnMethods = {"registerNewUser"})
     public void loginWithTheNewUser() {
         apiResponses.loginRequest(variables.getUserName(), variables.getPassword());
 
@@ -32,7 +32,7 @@ public class HomeAssignment {
         System.out.println(Utilities.parseMillisecondsDate(variables.getLastLoginDate()));
     }
 
-    @Test(dependsOnMethods = {"createNewUser"})
+    @Test(description = "Second attempt to register new user but with userName, password and externalId that already exist in the system", dependsOnMethods = {"registerNewUser"})
     public void registerWithExistenceDetails() {
         apiResponses.createNewUserRequest(variables.getUserName(), variables.getPassword(), variables.getExternalId());
 

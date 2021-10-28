@@ -35,6 +35,4 @@ public class Utilities {
         DateFormat simple = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
         return simple.format(dateInMilli);
     }
-
-
 }

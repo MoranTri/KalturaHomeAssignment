@@ -1,3 +1,5 @@
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Random;
 
 public class Utilities {
@@ -22,4 +24,17 @@ public class Utilities {
         }
         return sb.toString();
     }
+
+    public static void generateNewUserDetails(Variables variables) {
+        variables.setUserName(randomString());
+        variables.setExternalId(randomString());
+        variables.setPassword(randomString());
+    }
+
+    public static String parseMillisecondsDate(int dateInMilli) {
+        DateFormat simple = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
+        return simple.format(dateInMilli);
+    }
+
+
 }

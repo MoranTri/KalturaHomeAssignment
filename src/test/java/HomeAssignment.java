@@ -3,6 +3,10 @@ import org.testng.annotations.Test;
 
 public class HomeAssignment {
 
+    //Submitted by Moran Treibochan.
+    //Phone number: 054-4426668.
+    //email: morantri@gmail.com
+
     ApiResponses apiResponses = new ApiResponses();
     Variables variables = new Variables();
 

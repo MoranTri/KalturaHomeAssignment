@@ -4,7 +4,7 @@ import java.util.Map;
 
 public class ApiResponses extends ApiRequests {
 
-    JsonPath jsonPath;
+    private JsonPath jsonPath;
 
     public String getResponseHeaders() {
         return request.getHeaders().toString();

@@ -32,7 +32,7 @@ public class Utilities {
     }
 
     public static String parseMillisecondsDate(int dateInMilli) {
-        DateFormat simple = new SimpleDateFormat("dd/MM/yy HH:mm:ss");
+        DateFormat simple = new SimpleDateFormat("dd/MM/yy");
         return simple.format(dateInMilli);
     }
 }

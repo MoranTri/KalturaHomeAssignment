@@ -29,7 +29,7 @@ public class HomeAssignment {
         System.out.println("Response Headers: \n" + apiResponses.getResponseHeaders());
 
         Assert.assertTrue(apiResponses.lastLoginDateKeyExist(variables));
-        System.out.println(Utilities.parseMillisecondsDate(variables.getLastLoginDate()));
+        System.out.println("Last login date in a valid date format: " + Utilities.parseMillisecondsDate(variables.getLastLoginDate()));
     }
 
     @Test(description = "Second attempt to register new user but with userName, password and externalId that already exist in the system", dependsOnMethods = {"registerNewUser"})
